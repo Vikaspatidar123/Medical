@@ -14,7 +14,7 @@ import {Box, Button} from '@react-native-material/core';
 type AboutProps = NativeStackScreenProps<RootStackParamList, 'About'>;
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 5,
+    padding: 5,
     flex: 1,
   },
   stretch: {
@@ -41,17 +41,17 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
   },
 });
-const About = ({route}: AboutProps) => {
-  const {addCard} = route.params;
-  const navigation =
-    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+const About = ({addCard}) => {
+  // // const {addCard} = route.params;
+  // const navigation =
+  //   useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   const keys = Object.keys(addCard || {});
   const total = keys.reduce((prev, acc) => {
     return prev + addCard[acc].count * addCard[acc].prise;
   }, 0);
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView  >
         <View>
           {keys.map(item => {
             return (
@@ -79,10 +79,12 @@ const About = ({route}: AboutProps) => {
           })}
         </View>
       </ScrollView>
+      <View>
       <Button
         title={`Total Pay ${total}`}
-        onPress={() => navigation.navigate('Home')}
+        // onPress={() => navigation.navigate('Home')}
       />
+      </View>
     </SafeAreaView>
   );
 };

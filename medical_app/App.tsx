@@ -22,21 +22,22 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen
-          name="Login"
-          component={Login}
-          options={{title: 'Login'}}
-        />
-        <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
-        <Stack.Screen
-          name="About"
-          component={About}
-          options={{title: 'About'}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Nav/>
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName="Login">
+    //     <Stack.Screen
+    //       name="Login"
+    //       component={Login}
+    //       options={{title: 'Login'}}
+    //     />
+    //     <Stack.Screen name="Home" component={Home} options={{title: 'Home'}} />
+    //     <Stack.Screen
+    //       name="About"
+    //       component={About}
+    //       options={{title: 'About'}}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
     // <SafeAreaView>
     //   <ScrollView>
     //     <Home />
